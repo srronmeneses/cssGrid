@@ -5,31 +5,177 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CSS GRID</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/styleCode.css">
 </head>
 
-<body>
-    <h1 class="title">CSS GRID</h1>
-    <main class="main">
-        <h1>Bases del grid</h1>
-        <p>Comandos utilizados para el ejercicio</p>
-        <ul>
-            <li><p><span class="attribute">grid-template-columns</span> --> Define cuantas columnas se tendrá en el GRID.</li></p>
-            <li><p><span class="attribute">grid-template-rows</span> --> Define la altura de las filas que se crearan al definir las columns.</li></p>
-            <li><p><span class="attribute">grid-auto-rows</span> --> Define el tamaño de las filas que se generan automáticamente.</li></p>
-            <li><p><span class="attribute">px - % - vw - auto - fr (fracción)</span> --> Tipo de datos que soportan los atributos mencionados.</li></p>
-        </ul>
-        <div class="container1">
-            <div class="caja1 caja">1</div>
-            <div class="caja2 caja">2</div>
-            <div class="caja3 caja">3</div>
-            <div class="caja4 caja">4</div>
-            <div class="caja5 caja">5</div>
-            <div class="caja6 caja">6</div>
-            <div class="caja7 caja">7</div>
-            <!-- <div class="caja8 caja">8</div> -->
-        </div>
-    </main>
-</body>
+    <body>
+        <h1 class="title">CSS GRID</h1>
+        <main class="main">
+            <h1>Bases del grid</h1>
+            <h2>Comandos utilizados para el ejercicio</h2>
+            <ul>
+                <li><h2><span class="attribute">grid-template-columns</span> --> Define cuantas columnas se tendrá en el GRID.</li></h2>
+                <li><h2><span class="attribute">grid-template-rows</span> --> Define la altura de las filas que se crearan al definir las columns.</li></h2>
+                <li><h2><span class="attribute">grid-auto-rows</span> --> Define el tamaño de las filas que se generan automáticamente.</li></h2>
+                <li><h2><span class="attribute">px - % - vw - auto - fr (fracción)</span> --> Tipo de datos que soportan los atributos mencionados.</li></h2>
+            </ul>
+            <div class="container1">
+                <div class="centrar boxes">1</div>
+                <div class="centrar boxes">2</div>
+                <div class="centrar boxes">3</div>
+                <div class="centrar boxes">4</div>
+                <div class="centrar boxes">5</div>
+                <div class="centrar boxes">6</div>
+                <div class="centrar boxes">7</div>
+                <div class="centrar boxes">8</div>
+                <h2 class="centrar">Cuadricula preparada para un elemento</h2>
+            </div>
+            <br>
+            <h1>El poder de repeat</h1>
+            <h2>Esta función CSS representa un fragmento repetido de la lista de pistas , lo que permite escribir una gran cantidad de columnas o filas que exhiben un patrón recurrente en una forma más compacta</h2>
+            <ul>
+                <li><h2><span class="attribute">Ejemplo-1</span> --> Define de manera manual columns y rows, nada práctico si se tiene muchas columns y rows.</li></h2>
+                <li><h2><span class="attribute">Ejemplo-2</span> --> Tenemos el mismo resultado del ejemplo-1 pero para aumentar las columns y rows cambiamos el numero de repeat</li></h2>
+                <li><h2><span class="attribute">Ejemplo-3</span> --> Repeat puede ir al INICIO - MEDIO - FINAL al momento de declarar columns o rows como explica el código, soporta diferentes unidades (NO RECOMENDADO)</li></h2>
+                <li><h2><span class="attribute">Ejemplo-4</span> --> Repite patrones en esta caso para las columns. </li></h2>
+            </ul>
+
+            <div class="containerExample">
+                <div class="exampleBox exampleContainer1 ">
+                    <h2 class="centrar centerTitleBoxes">Ejemplo - 1</h2>
+                    <div class="centrar boxes">1</div>
+                    <div class="centrar boxes">2</div>
+                    <div class="centrar boxes">3</div>
+                    <div class="centrar boxes">4</div>
+                    <div class="centrar boxes">5</div>
+                    <div class="centrar boxes">6</div>
+                    <div class="centrar boxes">7</div>
+                    <div class="centrar boxes">8</div>
+                    <div class="centrar boxes">9</div>
+                    <div class="centrar boxes">10</div>
+                    <div class="centrar boxes">11</div>
+                    <div class="centrar boxes">12</div>
+                    <pre class="code">
+ <span class="coment">//Código css</span>
+ <span class="coment">1</span>   <span class="variables">.ejemplo-1</span><span class="asig">{</span>
+ <span class="coment">2</span>      display<span class="coment">:</span> <span class="grid">grid</span>;
+ <span class="coment">3</span>      grid-template-columns<span class="coment">:</span><span class="numBo"> 1</span><span class="asig">fr</span><span class="numBo"> 1</span><span class="asig">fr</span><span class="numBo"> 1</span><span class="asig">fr</span><span class="numBo"> 1</span><span class="asig">fr</span>;
+ <span class="coment">4</span>      grid-template-rows<span class="coment">:</span> <span class="numBo">1</span><span class="asig">fr</span><span class="numBo"> 1</span><span class="asig">fr</span><span class="numBo"> 1</span><span class="asig">fr</span>;
+ <span class="coment">6</span>      gap<span class="coment">:</span> <span class="numBo">10</span><span class="asig">px</span>; <span class="coment">//Espaciado que tiene una cuadricula respecto a otra.</span>
+ <span class="coment">5</span>      padding<span class="coment">:</span> <span class="numBo">10</span><span class="asig">px</span>; <span class="coment">//Crea el espacio o área alrededor del contenido de un elemento.</span>
+ <span class="coment">7</span>   <span class="asig">}</span>
+                                </pre>
+                </div>
+                <div class="exampleBox exampleContainer2 ">
+                    <h2 class="centrar centerTitleBoxes">Ejemplo - 2</h2>
+                    <div class="centrar boxes">1</div>
+                    <div class="centrar boxes">2</div>
+                    <div class="centrar boxes">3</div>
+                    <div class="centrar boxes">4</div>
+                    <div class="centrar boxes">5</div>
+                    <div class="centrar boxes">6</div>
+                    <div class="centrar boxes">7</div>
+                    <div class="centrar boxes">8</div>
+                    <div class="centrar boxes">9</div>
+                    <div class="centrar boxes">10</div>
+                    <div class="centrar boxes">11</div>
+                    <div class="centrar boxes">12</div>
+                    <pre class="code">
+ <span class="coment">//Código css</span>
+ <span class="coment">1</span>   <span class="variables">.ejemplo-2</span><span class="asig">{</span>
+ <span class="coment">2</span>      display<span class="coment">:</span> <span class="grid">grid</span>;
+ <span class="coment">3</span>      grid-template-columns<span class="coment">:</span><span class="variables"> repeat</span><span class="asig">(</span><span class="numBo">4</span><span class="coment">,</span><span class="numBo"> 1</span><span class="asig">fr</span><span class="asig">)</span>;
+ <span class="coment">4</span>      grid-template-rows<span class="coment">:</span><span class="variables"> repeat</span><span class="asig">(</span><span class="numBo">3</span><span class="coment">,</span><span class="numBo"> 1</span><span class="asig">fr</span><span class="asig">)</span>;
+ <span class="coment">6</span>      gap<span class="coment">:</span> <span class="numBo">10</span><span class="asig">px</span>; <span class="coment">//Espaciado que tiene una cuadricula respecto a otra.</span>
+ <span class="coment">5</span>      padding<span class="coment">:</span> <span class="numBo">10</span><span class="asig">px</span>; <span class="coment">//Crea el espacio o área alrededor del contenido de un elemento.</span>
+ <span class="coment">7</span>   <span class="asig">}</span>
+                                </pre>
+                </div>
+                <div class="exampleBox exampleContainer3 ">
+                    <h2 class="centrar centerTitleBoxes">Ejemplo - 3</h2>
+                    <div class="centrar boxes">1</div>
+                    <div class="centrar boxes">2</div>
+                    <div class="centrar boxes">3</div>
+                    <div class="centrar boxes">4</div>
+                    <div class="centrar boxes">5</div>
+                    <div class="centrar boxes">6</div>
+                    <div class="centrar boxes">7</div>
+                    <div class="centrar boxes">8</div>
+                    <div class="centrar boxes">9</div>
+                    <div class="centrar boxes">10</div>
+                    <div class="centrar boxes">11</div>
+                    <div class="centrar boxes">12</div>
+                    <div class="centrar boxes">13</div>
+                    <div class="centrar boxes">14</div>
+                    <div class="centrar boxes">15</div>
+                    <div class="centrar boxes">16</div>
+                    <div class="centrar boxes">17</div>
+                    <div class="centrar boxes">18</div>
+                    <div class="centrar boxes">19</div>
+                    <div class="centrar boxes">20</div>
+                    <div class="centrar boxes">21</div>
+                    <div class="centrar boxes">22</div>
+                    <div class="centrar boxes">23</div>
+                    <div class="centrar boxes">24</div>
+                    <div class="centrar boxes">25</div>
+                    <pre class="code">
+ <span class="coment">//Código css</span>
+ <span class="coment">1</span>   <span class="variables">.ejemplo-3</span><span class="asig">{</span>
+ <span class="coment">2</span>      display<span class="coment">:</span> <span class="grid">grid</span>;
+ <span class="coment">3</span>      grid-template-columns<span class="coment">:</span><span class="numBo">40</span><span class="asig">px</span><span class="variables"> repeat</span><span class="asig">(</span><span class="numBo">3</span><span class="coment">,</span><span class="numBo"> 1</span><span class="asig">fr</span><span class="asig">)</span> <span class="numBo">40</span><span class="asig">%</span>;
+ <span class="coment">4</span>      grid-template-rows<span class="coment">:</span><span class="variables"> repeat</span><span class="asig">(</span><span class="numBo">3</span><span class="coment">,</span><span class="numBo"> 1</span><span class="asig">fr</span><span class="asig">)</span> <span class="numBo">15</span><span class="asig">vh</span> <span class="numBo">60</span><span class="asig">px</span>;
+ <span class="coment">6</span>      gap<span class="coment">:</span> <span class="numBo">10</span><span class="asig">px</span>; <span class="coment">//Espaciado que tiene una cuadricula respecto a otra.</span>
+ <span class="coment">5</span>      padding<span class="coment">:</span> <span class="numBo">10</span><span class="asig">px</span>; <span class="coment">//Crea el espacio o área alrededor del contenido de un elemento.</span>
+ <span class="coment">7</span>   <span class="asig">}</span>
+                                </pre>
+                </div>
+                <div class="exampleBox exampleContainer4 ">
+                    <h2 class="centrar centerTitleBoxes">Ejemplo - 4</h2>
+                    <div class="centrar boxes">1</div>
+                    <div class="centrar boxes">2</div>
+                    <div class="centrar boxes">3</div>
+                    <div class="centrar boxes">4</div>
+                    <div class="centrar boxes">5</div>
+                    <div class="centrar boxes">6</div>
+                    <div class="centrar boxes">7</div>
+                    <div class="centrar boxes">8</div>
+                    <div class="centrar boxes">9</div>
+                    <div class="centrar boxes">10</div>
+                    <div class="centrar boxes">11</div>
+                    <div class="centrar boxes">12</div>
+                    <div class="centrar boxes">13</div>
+                    <div class="centrar boxes">14</div>
+                    <div class="centrar boxes">15</div>
+                    <div class="centrar boxes">16</div>
+                    <div class="centrar boxes">17</div>
+                    <div class="centrar boxes">18</div>
+                    <div class="centrar boxes">19</div>
+                    <div class="centrar boxes">20</div>
+                    <div class="centrar boxes">21</div>
+                    <div class="centrar boxes">22</div>
+                    <div class="centrar boxes">23</div>
+                    <div class="centrar boxes">24</div>
+                    <div class="centrar boxes">25</div>
+                    <div class="centrar boxes">26</div>
+                    <div class="centrar boxes">27</div>
+                    <div class="centrar boxes">28</div>
+                    <div class="centrar boxes">29</div>
+                    <div class="centrar boxes">30</div>
+                    <pre class="code">
+ <span class="coment">//Código css</span>
+ <span class="coment">1</span>   <span class="variables">.ejemplo-4</span><span class="asig">{</span>
+ <span class="coment">2</span>      display<span class="coment">:</span><span class="grid">grid</span>;
+ <span class="coment">3</span>      grid-template-columns<span class="coment">:</span><span class="variables"> repeat</span><span class="asig">(</span><span class="numBo">2</span><span class="coment">,</span> <span class="numBo">30</span><span class="asig">px</span> <span class="numBo">200</span><span class="asig">px</span> <span class="numBo">1</span><span class="asig">fr</span><span class="asig">)</span>;
+ <span class="coment">4</span>      grid-template-rows<span class="coment">:</span><span class="variables"> repeat</span><span class="asig">(</span><span class="numBo">5</span><span class="coment">,</span><span class="numBo"> 1</span><span class="asig">fr</span><span class="asig">)</span>;
+ <span class="coment">6</span>      gap<span class="coment">:</span> <span class="numBo">10</span><span class="asig">px</span>; <span class="coment">//Espaciado que tiene una cuadricula respecto a otra.</span>
+ <span class="coment">5</span>      padding<span class="coment">:</span> <span class="numBo">10</span><span class="asig">px</span>; <span class="coment">//Crea el espacio o área alrededor del contenido de un elemento.</span>
+ <span class="coment">7</span>   <span class="asig">}</span>
+                                </pre>
+                </div>
+                        
+            </div>
+        </main>
+    </body>
 
 </html>

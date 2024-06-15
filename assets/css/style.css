@@ -1,0 +1,111 @@
+body{
+    /* background: rgb(249,243,245); */
+    background: radial-gradient(circle, rgba(249,243,245,1) 0%, rgba(20,109,213,1) 100%);
+    
+}
+.title{
+    text-align: center;
+    font-size: 50px;
+        /* color: grey; */
+}
+.main {
+    background-color: white;
+    border-radius: 10px;
+    padding: 30px;
+    width: 80%;
+    margin: 0 auto;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.main > h1{
+    margin: 0;
+    text-decoration: underline;
+    font-size: 40px;
+}
+.attribute{
+    font-weight: bold;
+    font-size: 30px;
+}
+.boxes{
+    font-weight: bold;
+    background-color: aqua;
+}
+.container1{
+    background-color: #8F67CD;
+    display: grid;
+    /*note: GRID-TEMPLATE-COLUMNS define el numero de columnas que se tendrá dentro el grid
+    puedes poner el tamaño de las columnas con diferentes medidas
+    px - % - vw - auto - fr (fracción)*/
+    grid-template-columns:1fr 1fr 1fr;
+    
+    /*note: LAS FILAS SE CREARAN DE MANERA AUTOMÁTICA PERO:
+    CON GRID-TEMPLATE-ROW se define la ALTURA de las filas
+    y se puede utilizar las mismas unidades de medida*/
+    /*bug: Se debe tener cuidado cuando se defina las finas por que se puede
+    crea cuadriculas aunque estas no tengan contenido. LA CUADRICULA QUEDARA VACÍA
+    PERO OCUPARA ESPACIO DENTRO DE LA GRID*/
+    grid-template-rows: 25px 70px;
+
+    /*note: GRID-AUTO-ROW especificamos que las filas que se creen de manera 
+    automática tengan una ALTURA específica*/
+    grid-auto-rows: 100px;
+    gap: 10px;
+    padding: 10px;
+}
+.containerExample{
+    background-color: #0e50ac;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 700px 700px;
+    gap: 12px;
+    padding: 12px;
+}
+.box,.exampleBox {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    background-color: #8F67CD;
+    border-radius: 10px;   
+}
+.centrar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}  
+.centerTitleBoxes, .code {
+    grid-column: 1/-1;
+}
+.exampleContainer1{
+    display: grid;
+    /*note: Declaramos manualmente el numero de columns y el height de las rows 
+    cosa que puede no sera nada practico cuando se trata de crear varias de estas*/
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 30px 1fr 1fr 1fr 200px;
+    padding: 10px;
+    gap: 10px;
+}
+.exampleContainer2{
+    display: grid;
+    /*hack: con REPEAT podemos reducir y entender de mejor manera el código, de esta
+    manera se crean las cuadriculas */
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 30px repeat(3, 1fr) 200px;
+    padding: 10px;
+    gap: 10px;
+}
+.exampleContainer3{
+    display: grid;
+    /*hack: REPEAT puede ir al INICIO - CENTRO - FINAL de los parámetros que se quieren
+    dar las cuadriculas en las columns and rows*/
+    grid-template-columns: 40px repeat(3, 1fr) 40%;
+    grid-template-rows: 30px repeat(3, 1fr) 15vh 60px 200px;
+    padding: 10px;
+    gap: 10px;
+}
+.exampleContainer4{
+    display: grid;
+    /*hack: También podemos crear patrones que sean repetitivos, pero se debe tener cuidado 
+    al especificar los valores fijos, ya que te pueden dar resultados inesperados cuando se
+    repitan*/
+    grid-template-columns: repeat(2, 30px 200px 1fr);
+    grid-template-rows: 30px repeat(5, 1fr) 200px;
+    padding: 10px;
+    gap: 10px;
+}
