@@ -1,0 +1,26 @@
+pre{
+    background-color:rgb(15, 13, 36);
+    /* border-radius: 10px; */
+    color: white;
+    font-size: 20px;
+    width: 100%;
+    /* height: auto; */
+    overflow: auto;
+    margin: 0;
+}
+pre > .variables{
+    color: #00d061;
+}
+pre > .grid{
+    color: rgb(72, 207, 185);
+}
+pre >.asig {
+    color: red;
+}
+pre  >.numBo {
+    color: blueviolet;
+}
+pre > .coment {
+    color: gray;
+    font-style: italic;
+}
