@@ -33,7 +33,7 @@
                 <h2 class="centrar">Cuadricula preparada para un elemento</h2>
             </div>
             <br>
-            <h1>El poder de repeat</h1>
+            <h1>Función repeat de grid</h1>
             <h2>Esta función CSS representa un fragmento repetido de la lista de pistas , lo que permite escribir una gran cantidad de columnas o filas que exhiben un patrón recurrente en una forma más compacta</h2>
             <ul>
                 <li><h2><span class="attribute">Ejemplo-1</span> --> Define de manera manual columns y rows, nada práctico si se tiene muchas columns y rows.</li></h2>
@@ -41,7 +41,6 @@
                 <li><h2><span class="attribute">Ejemplo-3</span> --> Repeat puede ir al INICIO - MEDIO - FINAL al momento de declarar columns o rows como explica el código, soporta diferentes unidades (NO RECOMENDADO)</li></h2>
                 <li><h2><span class="attribute">Ejemplo-4</span> --> Repite patrones en esta caso para las columns. </li></h2>
             </ul>
-
             <div class="containerExample">
                 <div class="exampleBox exampleContainer1 ">
                     <h2 class="centrar centerTitleBoxes">Ejemplo - 1</h2>
@@ -175,7 +174,80 @@
                                 </pre>
                 </div>
             </div>
+            <br>
+            <h1>Función minmax de grid</h1>
+            <h2>Las funciones repeat y minmax de CSS Grid nos permiten jugar con los tamaños de las columnas y filas en la cuadrícula. En el caso de la propiedad minmax, esta nos permite establecer un tamaño mínimo y un tamaño máximo para las columnas o filas de nuestro grid. Y al final
+                te evita de escribir @media(width > X){...} 
+            </h2>
+            <ul>
+                <li><h2><span class="attribute">Ejemplo-1</span> --> Se puede utilizar de manera independiente como en este caso. Define que la 1ra column no puede ser menor a 300px
+                                                                     , en caso de que sea mayor se comportara como 1fr.</li></h2>
+                <li><h2><span class="attribute">Ejemplo-2</span> --> Tambien es posible combinar con un repeat como muestra el ejemplo. La columna 3 y 4 no tendran un width menor a 150px
+                                                                     , pero se comportara como 1fr si este es mayor a 150px</li></h2>
+                
+            </ul>
+            <div class="containerExampleMinMax">
+                <h2 class="">Ejemplo - 1</h2>
+                <h2 class="">Ejemplo - 2</h2>
+                <pre><code class="language-css">
+.gridMinMax1{
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: minmax(300px, 1fr) 1fr;
+    padding: 10px;
+}                </code></pre>
+                <pre><code class="language-css">
+.gridMinMax2{
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 1fr 1fr repeat(2, minmax(150px, 1fr));
+    padding: 12px;
+    column-gap: 5px;
+    row-gap: 5px; 
+}                </code></pre>
+                <div class="exampleMinMax gridMinMax1 ">
+                    <div class="boxesMinMax"></div>
+                    <div class="boxesMinMax"></div>
+               </div>
+                <div class="exampleMinMax gridMinMax2">
+                    <div class="boxesMinMax"></div>
+                    <div class="boxesMinMax"></div>
+                    <div class="boxesMinMax"></div>
+                    <div class="boxesMinMax"></div>
+                    <div class="boxesMinMax"></div>
+                    <div class="boxesMinMax"></div>
+                </div>
+            </div>
+
+
         </main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         <script src="./assets/js/prism.js"></script>
     </body>
 

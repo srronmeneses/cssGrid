@@ -1,6 +1,7 @@
 body{
     /* background: rgb(249,243,245); */
     background: radial-gradient(circle, rgba(249,243,245,1) 0%, rgba(20,109,213,1) 100%);
+    /* margin: 0; */
     
 }
 .title{
@@ -27,6 +28,7 @@ body{
 }
 .boxes{
     font-weight: bold;
+    font-size: 20px;
     background-color: aqua;
 }
 .container1{
@@ -59,7 +61,7 @@ body{
     gap: 12px;
     padding: 12px;
 }
-.box,.exampleBox {
+.box,.exampleBox{
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     background-color: #8F67CD;
     border-radius: 10px;   
@@ -108,4 +110,48 @@ body{
     grid-template-rows: 30px repeat(5, 1fr) 200px;
     padding: 10px;
     gap: 10px;
+}
+.containerExampleMinMax{
+    background-color: #0e50ac;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 30px 300px 300px;
+    column-gap: 12px;
+    row-gap: 12px;
+    padding: 12px;
+}
+.containerExampleMinMax > h2 {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.exampleMinMax{
+    box-shadow: rgba(0, 0, 0, 0.863) 0px 0px 30px;
+    /* height: 100px; */
+}
+.gridMinMax1{
+    box-sizing: border-box;
+    display: grid;
+    /*note: minmax no dejara que la primera columna sea menor a 300px pero si 
+    es mayor se comportará con 1fr*/
+    grid-template-columns: minmax(300px, 1fr) 1fr;
+    padding: 10px;
+}
+.gridMinMax2{
+    box-sizing: border-box;
+    display: grid;
+    /*note: Tambien es posible utilizar el minmax dentro de un repeat. En este caso no dejara
+    que  las dos ultimas columns la 3 y la 4 sean menor a 150px, pero si son mayores se
+    comportaran como 1fr*/
+    grid-template-columns: 1fr 1fr repeat(2, minmax(150px, 1fr));
+    padding: 12px;
+    column-gap: 5px;
+    row-gap: 5px; 
+}
+.boxesMinMax{
+    /* width: 50px; */
+    /* height: 50px; */
+    border: 2px solid white;
+    border-radius: 10px;
 }
