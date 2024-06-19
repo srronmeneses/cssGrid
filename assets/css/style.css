@@ -126,7 +126,7 @@ body{
     align-items: center;
     justify-content: center;
 }
-.exampleMinMax{
+.exampleMinMax, .exampleGap{
     box-shadow: rgba(0, 0, 0, 0.863) 0px 0px 30px;
     /* height: 100px; */
 }
@@ -147,11 +147,38 @@ body{
     grid-template-columns: 1fr 1fr repeat(2, minmax(150px, 1fr));
     padding: 12px;
     column-gap: 5px;
-    row-gap: 5px; 
+    row-gap: 5px;
 }
-.boxesMinMax{
+.boxesMinMax, .boxesGap{
     /* width: 50px; */
     /* height: 50px; */
     border: 2px solid white;
     border-radius: 10px;
+}
+.containerExampleGap{
+    background-color: #0e50ac;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 10px;
+    grid-auto-rows: 200px;
+    gap: 50px;
+    padding: 20px;
+}
+.gridGap1{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    column-gap: 10px;
+    padding: 10px;
+}
+.gridGap2{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    row-gap: 10px;
+    padding: 10px;
+}
+.gridGap3{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+    gap: 10px;
+    padding: 10px;
 }

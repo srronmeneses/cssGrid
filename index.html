@@ -184,7 +184,6 @@
                                                                      , en caso de que sea mayor se comportara como 1fr.</li></h2>
                 <li><h2><span class="attribute">Ejemplo-2</span> --> Tambien es posible combinar con un repeat como muestra el ejemplo. La columna 3 y 4 no tendran un width menor a 150px
                                                                      , pero se comportara como 1fr si este es mayor a 150px</li></h2>
-                
             </ul>
             <div class="containerExampleMinMax">
                 <h2 class="">Ejemplo - 1</h2>
@@ -218,36 +217,71 @@
                     <div class="boxesMinMax"></div>
                 </div>
             </div>
-
+            <br>
+            <h1>Responsive con minmax y espacio entre cuadriculas con gap </h1>
+            <h2>Podremos hacer responsive las cuadriculas de manera fácil y utilizando el poder de grid sin crear media query, solo con minmax.</h2>
+            <h2>Column-gap, row-gap o simplemente gap es una propiedad abreviada shorthand para grid-row-gap y grid-column-gap ya que están obsoletas y que especifica los canales o separación entre las columns y rows de las cuadrículas.
+            </h2>
+            <ul>
+                <li><h2><span class="attribute">Ejemplo-1</span> --> Con column-gap damos el espaciado entre cuadriculas solo a las columns, también se da un padding para crear el espacio entre el contenido y las cuadriculas
+                                                                     Para lograr que el grid se comporte de manera responsiva declaramos las columns con repeat y el numero de columnas se generará con el auto-fit (Auto-ajusta el contenido si es que
+                                                                     ya no tiene mas elementos y lo hace mas grande de ser necesario)</li></h2>
+                <li><h2><span class="attribute">Ejemplo-2</span> --> Con row-gap damos el espaciado entre cuadriculas solo a los rows, también se da un padding para crear el espacio entre el contenido y las cuadriculas
+                                                                     Para lograr que el grid se comporte de manera responsiva declaramos las columns con repeat y el numero de columnas se generará con el auto-fill (Auto-rellena con cuadriculas vacías
+                                                                     si el grid ya no tiene mas elementos que mostrar)</li></h2>
+                <li><h2><span class="attribute">Ejemplo-3</span> --> Y solo con gap se agrega el espaciado a las columns y rows al mismo tiempo </li></h2>
+            </ul>
+            <div class="containerExampleGap">
+                <h2 class="centrar">Ejemplo - 1</h2>
+                <h2 class="centrar">Ejemplo - 2</h2>
+                <h2 class="centrar">Ejemplo - 3</h2>
+                <pre><code class="language-css">.gridGap1{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    column-gap: 10px;
+    padding: 10px;
+}               </code></pre>
+                <pre><code class="language-css">.gridGap2{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+    row-gap: 10px;
+    padding: 10px;
+} </code></pre>
+                <pre><code class="language-css">.gridGap3{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+    gap: 10px;
+    padding: 10px;
+}</code></pre>
+                <div class="exampleGap gridGap1">
+                    <div class="boxesGap"></div>
+                    <div class="boxesGap"></div>
+                    <div class="boxesGap"></div>
+                    <div class="boxesGap"></div>
+                    <!-- <div class="boxesGap"></div>
+                    <div class="boxesGap"></div> -->
+                </div>
+                <div class="exampleGap gridGap2">
+                    <div class="boxesGap"></div>
+                    <div class="boxesGap"></div>
+                    <div class="boxesGap"></div>
+                    <div class="boxesGap"></div>
+                    <div class="boxesGap"></div>
+                    <div class="boxesGap"></div>
+                </div>
+                <div class="exampleGap gridGap3">
+                    <div class="boxesGap"></div>
+                    <div class="boxesGap"></div>
+                    <div class="boxesGap"></div>
+                    <div class="boxesGap"></div>
+                    <div class="boxesGap"></div>
+                    <div class="boxesGap"></div>
+                    <div class="boxesGap"></div>
+                    <div class="boxesGap"></div>
+                </div>
+            </div>
 
         </main>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         <script src="./assets/js/prism.js"></script>
     </body>
 
